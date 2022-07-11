@@ -12,12 +12,6 @@ type Library struct {
 	errors   map[string]error
 }
 
-type Scanner interface {
-	Scan(*number.Number) (interface{}, error)
-	ShouldRun() bool
-	Identifier() string
-}
-
 func NewLibrary() *Library {
 	return &Library{
 		m:        &sync.RWMutex{},
